@@ -1,5 +1,6 @@
 package com.location.entites;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,6 +12,7 @@ public class Locations {
 	@Id
 	private long id;
 	private String name;
+	@Column(name = "code")
 	private String codes;
 	private String type;
 	public long getId() {

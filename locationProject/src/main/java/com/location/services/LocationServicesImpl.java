@@ -1,5 +1,7 @@
 package com.location.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +12,19 @@ import com.location.repositories.LocationRepositories;
 public class LocationServicesImpl implements LocationServices {
 
 	@Autowired
-	private LocationRepositories locationRepo;
+	public LocationRepositories locationRepo;
 	
 	@Override
-	public void saveLocation(Locations locatoin) {
+	public void saveLocation(Locations location) {
 		// TODO Auto-generated method stub
-		locationRepo.save(locatoin);
+		locationRepo.save(location);
+	}
+
+	@Override
+	public List<Locations> getAllLocation() {
+		// TODO Auto-generated method stub
+		List<Locations> locations = locationRepo.findAll();
+		return locations;
 	}
 
 }

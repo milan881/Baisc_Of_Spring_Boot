@@ -1,18 +1,19 @@
 package com.location.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.location.entites.LocationData;
 import com.location.entites.Locations;
 import com.location.services.LocationServices;
 
-
 @Controller
 public class LocationController {
+
 
 	@Autowired
 	LocationServices locationServices;
@@ -26,7 +27,7 @@ public class LocationController {
 
 	//DTO:-Data Transfer Object 
 	@RequestMapping("/saveLocation")
-	public String saveLocation(@ModelAttribute("Loc") Locations location) {
+	public String saveLocation(@ModelAttribute("Loc") Locations location, ModelMap model) {
 		/*
 		location.setId(1);
 		location.setName("Jamshedpur");
@@ -38,6 +39,7 @@ public class LocationController {
 		System.out.println(location.getType());
 			*/
 		locationServices.saveLocation(location);
+		model.addAttribute("msg","Data saved in database !!");
 		return "create_location";
 	}
 		
@@ -67,4 +69,11 @@ public class LocationController {
 		return "save_location";
 	}
 	*/
+	
+	@RequestMapping("/listAll")
+	public String listAll() {
+		List<Locations> = locationServices.getAllLocation();
+		return "listAll";
+	}
+	
 }

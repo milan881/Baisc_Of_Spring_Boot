@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Create location</title>
+<title>Insert title here</title>
 </head>
 <body>
-		<h1>Location | Add new location</h1>
+			<h1>Location | Add new location</h1>
 		<form action="saveLocation" method="post">
 			<pre>
 			ID <input type="text" name="id"/>
@@ -19,5 +19,7 @@
 			<input type="submit" value="Save"/>			
 		</pre>
 		</form>
+		${msg }
+
 </body>
 </html>

@@ -39,7 +39,4 @@ public class Locations {
 	public void setType(String type) {
 		this.type = type;
 	} 
-
-	
-	
 }

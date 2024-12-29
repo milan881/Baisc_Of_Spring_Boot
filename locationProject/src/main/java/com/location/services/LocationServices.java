@@ -1,9 +1,13 @@
 package com.location.services;
 
+import java.util.List;
+
 import com.location.entites.Locations;
 
 public interface LocationServices {
 
-	public void saveLocation(Locations locatoin);
-	
+	void saveLocation(Locations location);
+
+	List<Locations> getAllLocation();
+
 }

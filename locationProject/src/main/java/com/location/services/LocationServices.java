@@ -10,4 +10,6 @@ public interface LocationServices {
 
 	List<Locations> getAllLocation();
 
+	void deleteById(long id);
+
 }

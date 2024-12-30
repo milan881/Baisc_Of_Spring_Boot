@@ -27,4 +27,10 @@ public class LocationServicesImpl implements LocationServices {
 		return locations;
 	}
 
+	@Override
+	public void deleteById(long id) {
+		// TODO Auto-generated method stub
+		locationRepo.deleteById(id);
+	}
+
 }

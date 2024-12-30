@@ -72,7 +72,7 @@ public class LocationController {
 	
 	@RequestMapping("/listAll")
 	public String listAll() {
-		List<Locations> = locationServices.getAllLocation();
+		List<Locations> location = locationServices.getAllLocation();
 		return "listAll";
 	}
 	
